@@ -23,7 +23,7 @@ export default {
           class="form-control"
           placeholder="Cerca il titolo del film..."
         />
-        <button class="btn btn-danger" type="button" id="button-addon2">
+        <button class="btn btn-danger" type="submit" id="button-addon2">
           Cerca
         </button>
       </div>

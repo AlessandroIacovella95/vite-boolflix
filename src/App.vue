@@ -16,7 +16,8 @@ export default {
       axios
         .get(endpoint)
         .then((response) => {
-          store.movies = response.results;
+          this.store.movies = response.data.results;
+          console.log(this.store.movies);
         })
         .catch((error) => {
           console.error(error);
