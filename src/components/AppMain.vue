@@ -1,13 +1,17 @@
 <script>
+import AppMoviesList from "./movies/AppMoviesList.vue";
 export default {
   data() {
     return {};
   },
+  components: { AppMoviesList },
 };
 </script>
 
 <template>
-  <section class="bg_main"></section>
+  <section class="bg_main">
+    <AppMoviesList />
+  </section>
 </template>
 
 <style lang="scss" scoped>
