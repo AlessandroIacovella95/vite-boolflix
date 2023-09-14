@@ -1,8 +1,12 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      term: "",
+    };
   },
+
+  emits: ["form-submit"],
 };
 </script>
 
@@ -11,18 +15,19 @@ export default {
     <div>
       <h1>BOOLFLIX</h1>
     </div>
-    <div class="input-group w-25">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Cerca il titolo di un film"
-        aria-label="Recipient's username"
-        aria-describedby="button-addon2"
-      />
-      <button class="btn btn-danger" type="button" id="button-addon2">
-        Button
-      </button>
-    </div>
+    <form class="w-25" @submit.prevent="$emit('form-submit', term)">
+      <div class="input-group">
+        <input
+          v-model="term"
+          type="text"
+          class="form-control"
+          placeholder="Cerca il titolo del film..."
+        />
+        <button class="btn btn-danger" type="button" id="button-addon2">
+          Cerca
+        </button>
+      </div>
+    </form>
   </div>
 </template>
 

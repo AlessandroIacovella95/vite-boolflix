@@ -1,4 +1,5 @@
 <script>
+import axios from "axios";
 import { store } from "./data/store";
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
@@ -9,11 +10,31 @@ export default {
     };
   },
   components: { AppHeader, AppMain },
+
+  methods: {
+    fetchMovies(endpoint) {
+      axios
+        .get(endpoint)
+        .then((response) => {
+          store.movies = response.results;
+        })
+        .catch((error) => {
+          console.error(error);
+        })
+        .finally(() => {});
+    },
+
+    customUri(term) {
+      const newApiUri = this.store.baseUri + this.store.apiKey + term;
+      this.fetchMovies(newApiUri);
+      console.log(newApiUri);
+    },
+  },
 };
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader @form-submit="customUri" />
   <AppMain />
 </template>
 
