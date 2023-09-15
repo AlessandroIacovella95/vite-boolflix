@@ -4,6 +4,7 @@ export default {
     return {};
   },
   props: {
+    poster_path: String,
     title: String,
     original_title: String,
     original_language: String,
@@ -15,21 +16,48 @@ export default {
 <template>
   <section class="container">
     <div class="col">
-      <ul>
+      <ul class="mb-4">
+        <li v-if="poster_path">
+          <img
+            class="custom_size"
+            :src="'https://image.tmdb.org/t/p/' + 'w342/' + poster_path"
+            alt="image series"
+          />
+        </li>
+        <li v-else>
+          <img class="img_not_found" src="no-image.png" alt="" />
+        </li>
         <li>
           <span>{{ title }}</span>
         </li>
         <li>
           <span>{{ original_title }}</span>
         </li>
-        <li v-if="['de', 'en', 'fr', 'it'].includes(original_language)">
-          <img :src="'/flags/' + original_language + '.png'" alt="Language" />
+        <li
+          v-if="
+            ['de', 'en', 'fr', 'it', 'ja', 'es'].includes(original_language)
+          "
+        >
+          <img
+            class="flag"
+            :src="'/flags/' + original_language + '.png'"
+            alt="Language"
+          />
         </li>
         <li v-else>
-          <span>{{ original_language }}</span>
+          <span>Language: {{ original_language }}</span>
         </li>
         <li>
-          <span> vote: {{ vote_average }}</span>
+          <span>
+            <font-awesome-icon
+              v-for="stella in vote_average"
+              icon="fa-solid fa-star"
+            />
+            <font-awesome-icon
+              v-for="stella in 5 - vote_average"
+              icon="fa-regular fa-star"
+            />
+          </span>
         </li>
       </ul>
     </div>
@@ -39,8 +67,20 @@ export default {
 <style lang="scss" scoped>
 .container {
   color: white;
-  img {
+
+  .custom_size {
+    max-width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+  .flag {
     width: 40px;
+  }
+
+  .img_not_found {
+    width: 175px;
   }
 }
 </style>

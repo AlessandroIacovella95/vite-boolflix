@@ -13,7 +13,7 @@ export default {
 <template>
   <div class="container my-3">
     <div>
-      <h1>BOOLFLIX</h1>
+      <h1>BOOLFLIX <font-awesome-icon icon="fa-solid fa-star" /></h1>
     </div>
     <form
       class="w-25"
