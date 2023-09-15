@@ -66,11 +66,21 @@ export default {
       @form-submit-series="customUriSeries"
     />
   </header>
+  <div class="d-flex justify-content-center">
+    <p class="mt-3" v-show="store.movies.length <= 0">
+      Fai la tua prima ricerca...😄
+    </p>
+  </div>
   <AppMain />
 </template>
 
 <style lang="scss">
 header {
   background-color: black;
+}
+
+p {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 </style>

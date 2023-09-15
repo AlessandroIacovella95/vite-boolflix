@@ -12,24 +12,28 @@ export default {
 </script>
 
 <template>
-  <section>
-    <div class="container">
-      <h3 class="mb-5 pt-3 text-light" v-if="store.movies.length > 0">
-        Lista Film:
-      </h3>
-      <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
-        <AppCard
-          v-for="movie in store.movies"
-          :key="movie.id"
-          :poster_path="movie.poster_path"
-          :title="movie.title"
-          :original_title="movie.original_title"
-          :original_language="movie.original_language"
-          :vote_average="Math.ceil(movie.vote_average / 2)"
-        />
-      </div>
+  <div class="container">
+    <h3
+      class="mb-5 pt-3 text-light text-center"
+      v-show="store.movies.length > 0"
+    >
+      Lista Film:
+    </h3>
+    <div
+      class="row justify-content-center gap-5 row-cols-2 row-cols-md-3 row-cols-lg-5"
+    >
+      <AppCard
+        v-for="movie in store.movies"
+        :key="movie.id"
+        :poster_path="movie.poster_path"
+        :title="movie.title"
+        :overview="movie.overview"
+        :original_title="movie.original_title"
+        :original_language="movie.original_language"
+        :vote_average="Math.ceil(movie.vote_average / 2)"
+      />
     </div>
-  </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>
