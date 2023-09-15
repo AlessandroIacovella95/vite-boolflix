@@ -6,7 +6,7 @@ export default {
     };
   },
 
-  emits: ["form-submit"],
+  emits: ["form-submit", "form-submit-series"],
 };
 </script>
 
@@ -15,7 +15,11 @@ export default {
     <div>
       <h1>BOOLFLIX</h1>
     </div>
-    <form class="w-25" @submit.prevent="$emit('form-submit', term)">
+    <form
+      class="w-25"
+      @submit.prevent="$emit('form-submit', term)"
+      @submit="$emit('form-submit-series', term)"
+    >
       <div class="input-group">
         <input
           v-model="term"

@@ -14,6 +14,7 @@ export default {
 <template>
   <section>
     <div class="container">
+      <h3 class="mb-4 pt-3">Lista Film:</h3>
       <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
         <AppCard
           v-for="movie in store.movies"

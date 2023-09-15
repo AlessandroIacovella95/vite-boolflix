@@ -1,16 +1,18 @@
 <script>
 import AppMoviesList from "./movies/AppMoviesList.vue";
+import AppSeriesList from "./series/AppSeriesList.vue";
 export default {
   data() {
     return {};
   },
-  components: { AppMoviesList },
+  components: { AppMoviesList, AppSeriesList },
 };
 </script>
 
 <template>
   <section class="bg_main">
     <AppMoviesList />
+    <AppSeriesList />
   </section>
 </template>
 
