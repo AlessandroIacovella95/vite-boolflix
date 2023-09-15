@@ -26,7 +26,12 @@ export default {
     },
 
     customUri(term) {
-      const newApiUri = this.store.baseUri + this.store.apiKey + term;
+      const newApiUri =
+        this.store.baseUriMovie +
+        "api_key=" +
+        this.store.apiKey +
+        "&query=" +
+        term;
       this.fetchMovies(newApiUri);
       console.log(newApiUri);
     },
