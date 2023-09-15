@@ -14,7 +14,9 @@ export default {
 <template>
   <section>
     <div class="container">
-      <h3 class="mb-5 pt-3 text-light">Lista SerieTv:</h3>
+      <h3 class="mb-5 pt-3 text-light" v-if="store.series.length > 0">
+        Lista SerieTv:
+      </h3>
       <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
         <AppCardSeries
           v-for="serie in store.series"
@@ -30,4 +32,8 @@ export default {
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h3 {
+  margin-left: 35px;
+}
+</style>

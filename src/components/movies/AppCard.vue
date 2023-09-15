@@ -45,13 +45,14 @@ export default {
           />
         </li>
         <li v-else>
-          <span>Language: {{ original_language }}</span>
+          <img class="flag" src="/flags/global.png" alt="" />
         </li>
         <li>
           <span>
             <font-awesome-icon
               v-for="stella in vote_average"
               icon="fa-solid fa-star"
+              style="color: #fffc42"
             />
             <font-awesome-icon
               v-for="stella in 5 - vote_average"

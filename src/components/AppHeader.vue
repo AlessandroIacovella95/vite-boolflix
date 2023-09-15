@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <div class="container my-3">
+  <div class="container py-4">
     <div>
       <h1>BOOLFLIX</h1>
     </div>

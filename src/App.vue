@@ -17,7 +17,6 @@ export default {
         .get(endpoint)
         .then((response) => {
           this.store.movies = response.data.results;
-          console.log(this.store.movies);
         })
         .catch((error) => {
           console.error(error);
@@ -30,7 +29,6 @@ export default {
         .get(endpoint)
         .then((response) => {
           this.store.series = response.data.results;
-          console.log(this.store.series);
         })
         .catch((error) => {
           console.error(error);
@@ -46,7 +44,6 @@ export default {
         "&query=" +
         term;
       this.fetchMovies(newApiUri);
-      console.log(newApiUri);
     },
 
     customUriSeries(term) {
@@ -57,18 +54,23 @@ export default {
         "&query=" +
         term;
       this.fetchSeries(newApiUri);
-      console.log(newApiUri);
     },
   },
 };
 </script>
 
 <template>
-  <AppHeader
-    @form-submit="customUriMovies"
-    @form-submit-series="customUriSeries"
-  />
+  <header>
+    <AppHeader
+      @form-submit="customUriMovies"
+      @form-submit-series="customUriSeries"
+    />
+  </header>
   <AppMain />
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+header {
+  background-color: black;
+}
+</style>

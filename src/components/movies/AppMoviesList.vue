@@ -14,7 +14,9 @@ export default {
 <template>
   <section>
     <div class="container">
-      <h3 class="mb-5 pt-3 text-light">Lista Film:</h3>
+      <h3 class="mb-5 pt-3 text-light" v-if="store.movies.length > 0">
+        Lista Film:
+      </h3>
       <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
         <AppCard
           v-for="movie in store.movies"
@@ -30,4 +32,8 @@ export default {
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h3 {
+  margin-left: 35px;
+}
+</style>
