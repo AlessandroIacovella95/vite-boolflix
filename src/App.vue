@@ -78,10 +78,12 @@ export default {
     <AppHeader @form-submit="handleSearch" />
   </header>
   <div class="d-flex justify-content-center">
-    <p class="mt-3" v-show="store.movies.length <= 0">
+    <p
+      class="mt-3"
+      v-show="store.movies.length <= 0 && store.series.length <= 0"
+    >
       Fai la tua prima ricerca...😄
     </p>
-    <p class="mt-3" v-show="this.newApiUri <= null">ciao</p>
   </div>
   <AppMain />
 </template>

@@ -84,7 +84,6 @@ export default {
     position: relative;
     width: 300px;
     height: 400px;
-    border: none;
     transition: transform 0.6s;
     transform-style: preserve-3d;
   }
