@@ -30,8 +30,9 @@ export default {
           <div class="card-content">
             <h2 v-if="title !== original_title">{{ title }}</h2>
             <h2>{{ original_title }}</h2>
-            <p class="fw-bold px-3">{{ overview }}</p>
+            <p class="fw-bold px-3 lh-sm">{{ overview }}</p>
             <div
+              class="mt-2"
               v-if="
                 ['de', 'en', 'fr', 'it', 'ja', 'es'].includes(original_language)
               "
@@ -78,29 +79,29 @@ export default {
 
 .flip-card {
   cursor: pointer;
-}
 
-.flip-card-inner {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  border: none;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
+  .flip-card-inner {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border: none;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    backface-visibility: hidden;
+    text-align: center;
+  }
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 300px;
-  height: 400px;
-  backface-visibility: hidden;
-  text-align: center;
-}
 .flip-card-front img {
   width: 100%;
   height: 100%;

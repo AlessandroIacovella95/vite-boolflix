@@ -14,7 +14,7 @@ export default {
 <template>
   <div class="container">
     <h3
-      class="mb-5 pt-3 text-light text-center"
+      class="mb-5 pt-3 text-danger text-center"
       v-show="store.movies.length > 0"
     >
       Lista Film:
@@ -38,6 +38,6 @@ export default {
 
 <style lang="scss" scoped>
 h3 {
-  margin-left: 35px;
+  font-weight: 700;
 }
 </style>

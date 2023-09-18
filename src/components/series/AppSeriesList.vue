@@ -14,7 +14,7 @@ export default {
 <template>
   <div class="container" :class="store.series.length > 0 ? 'pb-5' : ''">
     <h3
-      class="my-5 pt-3 text-light text-center"
+      class="my-5 pt-3 text-danger text-center"
       v-show="store.series.length > 0"
     >
       Lista SerieTv:
@@ -36,4 +36,8 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h3 {
+  font-weight: 700;
+}
+</style>

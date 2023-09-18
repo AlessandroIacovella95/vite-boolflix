@@ -18,6 +18,6 @@ export default {
 
 <style lang="scss" scoped>
 .bg_main {
-  background-color: rgb(101, 100, 100);
+  background-color: rgb(223, 223, 223);
 }
 </style>
